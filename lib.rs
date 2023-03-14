@@ -65,7 +65,7 @@ struct LocalModel {
 }
 
 fn verify_local_model(model: LocalModel) -> bool {
-    // TODO - SolAI
+    // TODO-SolAI:
     // Should verify that the model meets certain criteria, 
     // such as having a minimum accuracy threshold
     // or not containing any malicious code
