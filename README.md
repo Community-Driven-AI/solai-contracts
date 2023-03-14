@@ -11,3 +11,25 @@
 
 The SolAI program is an operating system for SolAI. SolAI acts as a coordinator, illusion generator, and standard library for Solana's first operating Federated Learning engine. For more information, visit [https://solaiprotocol.vercel.app/](https://solaiprotocol.vercel.app/)
 
+
+
+
+# Program Structure
+
+### **Rewarding Local Models and Minting NFTs**
+
+The **`verify_model`** function verifies submitted local models. The **`mint_nft_and_distribute`** function mints Local Model NFTs and distributes them to the recipient account.
+
+### **Peer Evaluation of Local Models**
+
+After training, local models are uploaded and opened to the public for evaluation. There can be three malicious actions:
+
+1. Submitting invalid models.
+2. Submitting malicious models that compromise the integrity of the global model.
+3. Providing incorrect evaluations of models.
+
+To prevent these malicious actions, we create a new account to hold the models' test scores.
+
+### **Aggregating into Global Model and Minting NFTs**
+
+First, we update the global model with the local model using FedAvg. Then, we serialize the updated global model, write it back to the account data, and upload it to IPFS using the **`upload_to_ipfs`** function. Finally, we mint global model NFTs and distribute them to the contributors. To do this, we calculate the number of NFTs each participant should receive and then mint the NFTs and distribute them to the participants.
