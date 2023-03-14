@@ -14,7 +14,7 @@ The SolAI program is an operating system for SolAI. SolAI acts as a coordinator,
 
 
 
-# Program Structure
+## Program Structure
 
 ### **Rewarding Local Models and Minting NFTs**
 
@@ -33,3 +33,7 @@ To prevent these malicious actions, we create a new account to hold the models' 
 ### **Aggregating into Global Model and Minting NFTs**
 
 First, we update the global model with the local model using FedAvg. Then, we serialize the updated global model, write it back to the account data, and upload it to IPFS using the **`upload_to_ipfs`** function. Finally, we mint global model NFTs and distribute them to the contributors. To do this, we calculate the number of NFTs each participant should receive and then mint the NFTs and distribute them to the participants.
+
+## Sample NFT
+
+You can find a sample SolAI NFT that has been minted by submitting a local model in the context of federated learning at the following URL: [https://solscan.io/token/eZHzfWBPjkEVdsb9fzJGZ58SohadGr5snQDWJ2yVHBZ?cluster=devnet#metadata](https://solscan.io/token/eZHzfWBPjkEVdsb9fzJGZ58SohadGr5snQDWJ2yVHBZ?cluster=devnet#metadata)
